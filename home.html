@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+
+
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <nav class="navbar" style="display: flex; flex-direction: column;">
+                    <!-- Brand/logo -->
+
+                    <a class="navbar-brand" href="#">
+                        <img src="/img/logo.png" alt="logo" style="width:50px;">
+                    </a>
+
+                    <!-- Links -->
+                    <ul class="navbar-nav" style="margin-top: 70%;">
+                        <li class="nav-item"
+                            style="display: flex; flex-direction: row; align-items: center; margin-bottom: 20%;">
+                            <span style="margin-right: 10%;"><img src="/img/profile-icon.png"
+                                    style="width: 50px;"></span>
+                            <a class="nav-link" href="#" style="
+                            width: 100px;">PROFILE</a>
+                        </li>
+                        <li class="nav-item"
+                            style="display: flex; flex-direction: row; align-items: center; margin-bottom: 20%;">
+                            <span style="margin-right: 10%;"><img src="/img/messenger-icon.png"
+                                    style="width: 50px;"></span>
+                            <a class="nav-link" href="#" style="
+                            width: 100px;">MESSAGE</a>
+                        </li>
+                        <li class="nav-item"
+                            style="display: flex; flex-direction: row; align-items: center; margin-bottom: 20%;">
+                            <span style="margin-right: 10%;"><img src="/img/setting-icon.png"
+                                    style="width: 50px;"></span>
+                            <a class="nav-link" href="#" style="
+                            width: 100px;">SETTING</a>
+                        </li>
+                        <li class="nav-item"
+                            style="display: flex; flex-direction: row; align-items: center; margin-bottom: 20%;">
+                            <span style="margin-right: 10%;"><img src="/img/privacy.png" style="width: 40px;"></span>
+                            <a class="nav-link" href="#" style="
+                            width: 100px;">PRIVACY</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4" style="display: flex; flex-direction: row;">
+                <div class="d-none d-md-block" style="border-left: 2px solid #002744; height: auto;"></div>
+
+                <div style="display: flex; flex-direction: column; margin-left: 5%; width: 100%;">
+                    <div
+                        style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search"
+                            style="width: 80%; border-radius: 20px;">
+                        <div><a class="signout" href="index.html" style="
+                            font: 21px Gotham-bold; color: white; ">SIGN OUT</a></div>
+                    </div>
+                    <div class="container">
+                        <div class="row users-type" style="margin-top: 5%;">
+                            <div class="col-sm-3">
+                                <img src="/img/frame-user.png" class="img-fluid" style="max-width: 100%;">
+                            </div>
+                            <div class="col-sm-9" style="text-align: right;">
+                                <div class="title-user"
+                                    style="display:flex; flex-direction: row; justify-content: space-between; align-items: center; margin-top: 2%;">
+                                    <div class="name-id" id="name-users" style="font: 24px Gotham-bold;">User</div>
+                                    <div class="name-id-2" id="name-users-2"
+                                        style="font: 14px Gotham-regular; color: #989898; margin-left: -72%;">
+                                        @useroffical</div>
+                                    <div id="timeArea">Today</div>
+                                </div>
+                                <textarea id="contentsBox" placeholder="What's happening" class="textbox"
+                                    style="padding-left: 20px; padding-top: 10px;"></textarea>
+                                <div id="charCountArea">140chars</div>
+                                <button id="myBtn" onclick="addTweet()" class="btn-tweet">Smurf</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 px-6 pb-2 mb-3 border-bottom"
+                        style="flex-direction: row;">
+                        <h1 class="h2">Today</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row users-type-2" style="margin-top: 5%;">
+                            <div class="col-sm-10 user-tweet">
+                                <div id="tweetArea" style="list-style : none"></div>
+                            </div>
+
+                            <div class="col-sm-2"
+                                style="background-color: #0089EA; color: white; border-radius: 5px; height: 235px;">
+                                <div class="trending" style="border-bottom: 2px solid white; margin-top: 7%;">
+                                    <div style="font: 10px Gotham-regular; margin-bottom: 7%">Trending in Vietnam</div>
+                                    <div style="font: 12px Gotham-bold;margin-bottom: 7%">#Vietnamnews</div>
+                                    <div style="font: 10px Gotham-regular;margin-bottom: 7%">2,956K Smurf</div>
+                                </div>
+
+                                <div class="trending" style="border-bottom: 2px solid white; margin-top: 7%;">
+                                    <div style="font: 10px Gotham-regular; margin-bottom: 7%">Trending in Vietnam</div>
+                                    <div style="font: 12px Gotham-bold;margin-bottom: 7%">#Vietnamsong</div>
+                                    <div style="font: 10px Gotham-regular;margin-bottom: 7%">4,956K Smurf</div>
+                                </div>
+
+                                <div class="trending" style="margin-top: 7%;">
+                                    <div style="font: 10px Gotham-regular; margin-bottom: 7%">Trending in Vietnam</div>
+                                    <div style="font: 12px Gotham-bold;margin-bottom: 7%">#Vietnamnews</div>
+                                    <div style="font: 10px Gotham-regular;margin-bottom: 7%">1,956K Smurf</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- </div>
+                    </div> -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!--script-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="/js/main.js"> </script>
+    <script src="/js/moment-with-locales.js"></script>
+
+</body>
+
+</html>
